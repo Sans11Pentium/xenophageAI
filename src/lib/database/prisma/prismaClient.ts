@@ -1,8 +1,15 @@
 import { PrismaClient } from "@prisma/client";
 
-let prisma = (global as any).prisma;
-if(!prisma){
-    prisma = (global as any).prisma = new PrismaClient();
+declare global {
+  var prisma: PrismaClient | undefined; // Declare prisma on the global object
 }
+
+let prisma: PrismaClient;
+
+if (!global.prisma) {
+  global.prisma = new PrismaClient();
+}
+
+prisma = global.prisma;
 
 export default prisma;
