@@ -9,13 +9,7 @@ const Home = () => {
   return (
     <div>
       <p>Home</p>
-
-      <div className='flex items-center gap-x-2'>
-            <Link href={isSignedIn?"/":"/sign-up"}>
-            <button>Get Started</button>
-            </Link>
-        </div>
-
+      {/* <UserButton /> */}
     </div>
   )
 }
