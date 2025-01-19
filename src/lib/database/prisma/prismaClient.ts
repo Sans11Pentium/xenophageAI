@@ -1,15 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 declare global {
-  // Extend the global type to include the `prisma_` property
-  namespace NodeJS {
-    interface Global {
-      prisma_: PrismaClient | undefined;
-    }
-  }
-
-  // Add to globalThis for proper TS recognition
-  var prisma_: PrismaClient | undefined;
+  var prisma_: PrismaClient | undefined; // Declare prisma_ globally
 }
 
 const prisma = globalThis.prisma_ || new PrismaClient();
