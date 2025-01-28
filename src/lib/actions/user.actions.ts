@@ -75,10 +75,13 @@ export async function deleteUser(clerkId: string) {
 // USE CREDITS
 export async function updateCredits(userId: string, creditFee: number) {
   try {
+    if (!userId || typeof creditFee !== "number") {
+      throw new Error("Invalid input: userId and creditFee are required");
+    }
     const updatedUserCredits = await prisma.user.update({
         where: { id: userId },
         data: { creditBalance: {increment: creditFee} },
-    })
+    });
 
     if(!updatedUserCredits) throw new Error("User credits update failed");
 

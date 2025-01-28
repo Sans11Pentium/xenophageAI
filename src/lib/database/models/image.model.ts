@@ -1,4 +1,5 @@
-export interface IImage extends Document {
+export interface IImage{
+  id: string;
   title: string;
   transformationType: string;
   publicId: string;

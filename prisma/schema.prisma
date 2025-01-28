@@ -22,7 +22,7 @@ model User {
   firstName     String?
   lastName      String?
   planId        Int      @default(1)
-  creditBalance Int      @default(10)
+  creditBalance Int      @default(5)
   transactions  Transaction[]
   images  Image[]
 }

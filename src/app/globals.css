@@ -320,11 +320,11 @@
   }
 
   .sidebar-logo {
-    @apply flex items-center gap-2 md:py-2;
+    @apply flex items-center gap-2 md:py-2 m-auto;
   }
 
   .sidebar-nav {
-    @apply h-full flex-col justify-between md:flex md:gap-4 overflow-y-scroll;
+    @apply h-full flex-col justify-between md:flex md:gap-4;
   }
 
   .sidebar-nav_elements {
@@ -336,7 +336,7 @@
   }
 
   .sidebar-link {
-    @apply p-16-semibold flex size-full gap-4 p-4;
+    @apply p-16-semibold flex size-full gap-4 p-3;
   }
 
   /* TransformationForm Component */
@@ -377,4 +377,16 @@
   font-size: 16px;
   font-weight: 600;
   color: #384262;
+}
+
+.root-container{
+  background-color: #EFDCF9;
+}
+
+.bg-btn:hover{
+  background-color: #A1A9FE;
+}
+
+.bg-btn{
+  background-color: #6B7DFF;
 }

@@ -27,7 +27,7 @@ declare type CreateUserParams = {
       height: number;
       config: any;
       secureURL: string;
-      transformationURL: string;
+      transformationUrl: string;
       aspectRatio: string | undefined;
       prompt: string | undefined;
       color: string | undefined;
@@ -38,7 +38,7 @@ declare type CreateUserParams = {
   
   declare type UpdateImageParams = {
     image: {
-      _id: string;
+      id: string;
       title: string;
       publicId: string;
       transformationType: string;
@@ -46,7 +46,7 @@ declare type CreateUserParams = {
       height: number;
       config: any;
       secureURL: string;
-      transformationURL: string;
+      transformationUrl: string;
       aspectRatio: string | undefined;
       prompt: string | undefined;
       color: string | undefined;

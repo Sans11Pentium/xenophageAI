@@ -23,7 +23,7 @@ const Sidebar = () => {
                             const isActive = link.route === pathname
                             return (
                                 <li key={link.route} className={`sidebar-nav_element group ${
-                                isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
+                                isActive ? 'bg-btn text-white' : 'text-gray-700'}`}>
                                     <Link href={link.route} className='sidebar-link'>
                                         <Image src={link.icon}
                                         alt="logo"
@@ -41,7 +41,7 @@ const Sidebar = () => {
                                 const isActive = link.route === pathname
                                 return (
                                     <li key={link.route} className={`sidebar-nav_element group ${
-                                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'}`}>
+                                    isActive ? 'bg-btn text-white' : 'text-gray-700'}`}>
                                         <Link href={link.route} className='sidebar-link'>
                                             <Image src={link.icon}
                                             alt="logo"
@@ -60,7 +60,7 @@ const Sidebar = () => {
                 </SignedIn>
 
                 <SignedOut>
-                    <Button asChild className='button bg-purple-gradient bg-cover'>
+                    <Button asChild className='button bg-btn bg-cover'>
                         <Link href="/sign-in">Login</Link>
                     </Button>
                 </SignedOut>
