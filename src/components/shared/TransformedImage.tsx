@@ -24,8 +24,6 @@ const TransformedImage = ({
             }), title);
         }
 
-        // console.log("***",image?.publicId);
-        // console.log(transformationConfig);
     return (
         <div className="flex flex-col gap-4">
             <div className="flex-between">

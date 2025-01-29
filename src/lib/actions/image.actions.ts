@@ -10,8 +10,6 @@ import {v2 as cloudinary} from "cloudinary";
 // ADD IMAGE
 export async function addImage({ image, userId, path}:AddImageParams){
     try {
-        // console.log("We are getting this image from frontend", image);
-        // console.log("We are getting this userId from frontend", userId);
         
         const author = await prisma.user.findUnique({ 
             where: { id: userId }, 
@@ -26,22 +24,13 @@ export async function addImage({ image, userId, path}:AddImageParams){
                 author: {connect: {id: author.id}}, // connect the user to image
             }
         })
-        // Ensure revalidatePath is used in a server-side context
-        // if (typeof revalidatePath === 'function') {
-        //     revalidatePath(path);
-        // } else {
-        //     console.warn('revalidatePath is not available in this context');
-        // }
         return JSON.parse(JSON.stringify(newImage));
     } catch (error) {
         handleError(error);
     }
 }
-import { ObjectId } from "mongodb";
-// UPDATE IMAGE
-// export async function updateImage({ image, userId, path}:UpdateImageParams){
-//     console.log("Image ID to update:", image._id);
 
+// export async function updateImage({ image, userId, path}:UpdateImageParams){
 //     try {
 //         const imageToUpdate = await prisma.image.findUnique({
 //             where: {id: image._id}
@@ -50,7 +39,7 @@ import { ObjectId } from "mongodb";
 //         if(!imageToUpdate || imageToUpdate.authorId != userId){
 //             throw new Error("unauthorized or image not found");
 //         }
-//         console.log("////////////imageToUpdate", imageToUpdate);
+//         
 //         const updatedImage = await prisma.image.update({
 //             where: {id: imageToUpdate.id},
 //             data: image
@@ -62,13 +51,9 @@ import { ObjectId } from "mongodb";
 //     }
 // }
 
-
+// UPDATE IMAGE
 export async function updateImage({ image, userId, path }: UpdateImageParams) {
   try {
-    // Log the incoming image ID
-    // console.log("Image ID to update:", image.id);
-
-    // Validate and convert the ID
     if (!image.id) {
       throw new Error("Image ID is missing.");
     }
@@ -83,8 +68,6 @@ export async function updateImage({ image, userId, path }: UpdateImageParams) {
     if (!imageToUpdate || imageToUpdate.authorId !== userId) {
       throw new Error("Unauthorized or image not found.");
     }
-
-    // console.log("Image to update:", imageToUpdate);
 
     // Update the image
     const updatedImage = await prisma.image.update({
@@ -104,7 +87,7 @@ export async function updateImage({ image, userId, path }: UpdateImageParams) {
       },
     });
 
-    // Optional: Revalidate path if required
+    // Revalidate path
     // revalidatePath(path);
 
     return JSON.parse(JSON.stringify(updatedImage));

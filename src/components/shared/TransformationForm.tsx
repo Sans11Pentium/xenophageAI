@@ -158,10 +158,6 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
         );
         setNewTransformation(null);
     
-        // Log the values of userId and creditFee
-        // console.log('#############userId:', userId);
-        // console.log('#############creditFee:', creditFee);
-    
         if (!userId || typeof creditFee !== 'number') {
             console.error('Invalid input: userId and creditFee are required');
             setisTransforming(false);
