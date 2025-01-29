@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 interface PageProps {
-  searchParams: Record<string, string | string[] | undefined>;
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 const Home = async ({ searchParams }: PageProps) => {
