@@ -44,13 +44,13 @@ export const navLinks = [
   export const plans = [
     {
       _id: 1,
-      name: "Free",
+      name: "Free Xeno",
       icon: "/assets/icons/free-plan.svg",
       price: 0,
-      credits: 20,
+      credits: 1,
       inclusions: [
         {
-          label: "20 Free Credits",
+          label: "1 Free Credit",
           isIncluded: true,
         },
         {
@@ -69,13 +69,13 @@ export const navLinks = [
     },
     {
       _id: 2,
-      name: "Pro Package",
+      name: "Alpha Xeno Package",
       icon: "/assets/icons/free-plan.svg",
-      price: 40,
-      credits: 120,
+      price: 20,
+      credits: 5,
       inclusions: [
         {
-          label: "120 Credits",
+          label: "5 Credits",
           isIncluded: true,
         },
         {
@@ -94,13 +94,13 @@ export const navLinks = [
     },
     {
       _id: 3,
-      name: "Premium Package",
+      name: "Premium Xeno Package",
       icon: "/assets/icons/free-plan.svg",
-      price: 199,
-      credits: 2000,
+      price: 99,
+      credits: 15,
       inclusions: [
         {
-          label: "2000 Credits",
+          label: "10 Credits",
           isIncluded: true,
         },
         {
