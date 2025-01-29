@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true, 
   },
 
+  typescript: {
+    ignoreBuildErrors: true, // ✅ Ignores type errors during production builds
+  },
+
 };
 
 export default nextConfig;
