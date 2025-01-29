@@ -5,14 +5,12 @@ import Image from "next/image"
 import Link from "next/link"
 
 interface PageProps {
-  params?: { id: string; type: TransformationTypeKey };
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
 const Home = async ({ searchParams }: PageProps) => {
-  const { page: pageParam, query: queryParam } = searchParams;
-  const page = Number(pageParam) || 1;
-  const searchQuery = (queryParam as string) || '';
+  const page = Number((await searchParams)?.page) || 1;
+  const searchQuery = ((await searchParams)?.query as string) || '';
 
   const images = await getAllImages({ page, searchQuery})
 
