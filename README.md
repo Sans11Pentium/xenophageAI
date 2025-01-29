@@ -1,6 +1,8 @@
 # XENOPHAGE AI
 
-![XENOPHAGE AI Logo](public/assets/images/PHAGE.png)
+<p align='center'>
+  <img src='public/assets/images/PHAGE.png' alt='XENOPHAGE AI Logo' height='200' width='200'/>
+</p>
 
 Xenophage AI is an advanced AI SaaS application for performing various image transformations using Cloudinary AI features. This platform allows users to restore images, apply generative fill, recolor objects, remove objects, remove backgrounds, and utilize AI-powered image search capabilities.
 
